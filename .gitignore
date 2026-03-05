@@ -3,3 +3,12 @@ node_modules
 dist
 
 package-lock.json
+/src/generated/prisma
+.agents
+.claude
+.vscode
+.vscode-test
+.vscode-test-results
+
+prisma/migrations
+
