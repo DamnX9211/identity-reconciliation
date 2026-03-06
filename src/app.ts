@@ -2,12 +2,15 @@ import "dotenv/config";
 import prisma from "./db/prisma";
 import express from "express";
 import cors from "cors";
+import { identifyContact } from "./controllers/identifyController";
 
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+app.use("/", identifyContact);
 
 app.get("/", (req, res) => {
     res.send("Bitespace Identity Reconciliation API is running!");
