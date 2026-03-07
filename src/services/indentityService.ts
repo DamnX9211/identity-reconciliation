@@ -9,8 +9,8 @@ export const handleIdentity = async (
   const directMatches = await prisma.contact.findMany({
     where: {
       OR: [
-        { email: email || undefined },
-        { phoneNumber: phoneNumber || undefined }
+        { email: email },
+        { phoneNumber: phoneNumber }
       ]
     }
   });

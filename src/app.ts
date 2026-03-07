@@ -6,15 +6,17 @@ import { identifyContact } from "./controllers/identifyController";
 
 
 const app = express();
-
-app.use(cors());
 app.use(express.json());
-
-app.use("/", identifyContact);
+app.use(cors());
+app.post("/identify", identifyContact);
 
 app.get("/", (req, res) => {
     res.send("Bitespace Identity Reconciliation API is running!");
 });
+app.get("/health", (req, res) => {
+    res.status(200).json({ status: "ok" });
+});
+
 
 app.get("/contacts", async (req, res) => {
     const contacts = await prisma.contact.findMany();
