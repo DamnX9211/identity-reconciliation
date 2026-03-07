@@ -1,7 +1,12 @@
 import request from "supertest";
 import app from "../app";
+import prisma from "../db/prisma";
 
 describe("POST /identify", () => {
+
+    beforeEach(async () => {
+        await prisma.contact.deleteMany();
+    })
   it("should create a new primary contact", async () => {
     const res = await request(app).post("/identify").send({
       email: "test@example.com",

@@ -7,8 +7,7 @@
     "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
     "test": "jest",
     "build": "tsc",
-    "start": "node dist/server.js",
-    "postinstall": "prisma generate"
+    "start": "node dist/server.js"
   },
   "keywords": [],
   "author": "Rohit Kumar",

@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { handleIdentity } from "../services/indentityService";
 
+// Controller for /identify endpoint
 export const identifyContact = async (req: Request, res: Response) => {
   try {
     const { email, phoneNumber } = req.body;
