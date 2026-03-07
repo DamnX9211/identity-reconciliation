@@ -51,3 +51,11 @@ Response:
 npm install  
 npx prisma generate  
 npm run dev
+
+## Running test
+
+npm test
+
+
+
+## THANK YOU ##
